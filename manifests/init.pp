@@ -21,6 +21,7 @@ class redis(
   $redis_bind = '127.0.0.1',
   $redis_password = '',
   $redis_max_memory = '1gb',
+  $redis_max_memory_policy = 'allkeys-lru',
   $version = '2.2.12',
 ) {
 
