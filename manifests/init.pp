@@ -39,6 +39,9 @@ class redis(
     /2\.6\.\d+/: {
       $redis_conf_file = 'redis.2.6.conf.erb'
     }
+    /2\.8\.\d+/: {
+      $redis_conf_file = 'redis.2.8.conf.erb'
+    }
     default: {
       fail("Invalid redis version, ${version}")
     }
