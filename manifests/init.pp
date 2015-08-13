@@ -19,7 +19,7 @@
 class redis(
   $redis_port = '6379',
   $redis_bind = '127.0.0.1',
-  $redis_password = '',
+  $redis_password = undef,
   $redis_max_memory = '1gb',
   $redis_max_memory_policy = 'allkeys-lru',
   $version = '2.2.12',
@@ -58,9 +58,9 @@ class redis(
     }
 
     service { 'redis-server':
-      ensure     => running,
-      require    => Package['redis-server'],
-      subscribe  => File['/etc/redis/redis.conf'],
+      ensure    => running,
+      require   => Package['redis-server'],
+      subscribe => File['/etc/redis/redis.conf'],
     }
 
 }
