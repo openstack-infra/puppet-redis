@@ -17,12 +17,12 @@
 # http://packages.ubuntu.com/quantal/amd64/redis-server/filelist
 
 class redis(
-  $redis_port = '6379',
-  $redis_bind = '127.0.0.1',
-  $redis_password = undef,
-  $redis_max_memory = '1gb',
+  $redis_bind              = '127.0.0.1',
+  $redis_max_memory        = '1gb',
   $redis_max_memory_policy = 'allkeys-lru',
-  $version = '2.2.12',
+  $redis_password          = undef,
+  $redis_port              = '6379',
+  $version                 = '2.2.12',
 ) {
 
   package {'redis-server':
